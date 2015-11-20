@@ -1,0 +1,14 @@
+<div class="row pickmeup unlocked-{{unlocked}}" data-pickmeup-id={{_id}}>
+	<div class="col-md-6 col-md-offset-3">
+		<div class = "pickmeup-bar">
+			{{#if unlocked}}
+				<i class="fa fa-unlock"></i> {{ timestamp }}
+			{{else}}
+				<i class="fa fa-lock"></i> Locked
+			{{/if}}
+		</div>
+		<div class = "pickmeup-content">
+
+		</div>
+	</div>
+</div>

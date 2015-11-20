@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row" id="header">
+		<span class="left">
+			<h2>PickMeUp</h2>
+		</span>
+		<span id="karma">
+			You have <span id="user-karma">{{user.karma}}</span> karma
+		</span>
+		<span class="right">
+			Signed in as <strong>{{user.username}}</strong> | <a id="logout" href="#">Logout</a>
+		</span>
+	</div>
+
+	<div class="row" id="compose-button-row">
+		<div class="col-md-6 col-md-offset-3">
+			<button class="btn btn-info" id="compose-button">
+				Compose Pickmeup
+			</button>
+		</div>
+	</div>
+
+	<div id="modal-container"></div>
+
+	<div id="pickmeups-container">
+		<h2>Your Pickmeups</h2>
+
+		{{#each user.pickmeups_received}}
+			{{> pickmeup}}
+		{{/each}}
+	</div>
+</div>

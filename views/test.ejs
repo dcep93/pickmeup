@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pickmeup test file</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/javascripts/test.js"></script>
+  </head>
+  <body>
+	<h1>PickMeUp Test File</h1>
+	<br />
+
+	<a href="/clear?password=cleardb">Clear Database</a>
+	
+	<h2>API results</h2>
+	<div id = "api-results">
+		<strong>URL:</strong> <span id = "api-results-url"></span> </br>
+		<strong>Response: </strong> <br />
+		<div id = "api-results-content"></div>
+	</div>
+
+	<h2>API Directory</h2>
+
+	<div class = "api-container">
+
+		<h4>GET requests</h4>
+
+		<div id = "api-information">
+			user_id: <input type = "text" id = "get_user_id"> <br>
+			pickmeup_id: <input type = "text" id = "get_pickmeup_id"> 
+		</div>
+
+		<div>
+			<a href="#" id = "get_users">/users/</a> - Get a list of all the users.
+		</div>
+
+		<div>
+			<a href="#" id = "get_user">/users/:user_id</a> - Get a specific users information.
+		</div>
+
+		<div>
+			<a href="#" id = "get_user_pickmeups">/users/:user_id/pickmeups/</a> - Get a list of a specific user's received pickmeups.
+		</div>
+
+		<div>
+			<a href="#" id = "get_pickmeup">/users/:user_id/pickmeups/:pickmeup_id</a> - Get the contents of a specific pickmeup
+		</div>
+
+
+		<h4>POST requests</h4>
+
+		<div>
+			Username: <input id="post_username" type="text" /><br>
+			Password: <input id="post_password" type="text" /><br><br>
+		</div>
+
+		<div>
+			<a href="#" id="post_create_user">/users/</a> - Create a user with specified username/password. Fails if username already exists.
+		</div>
+
+		<div>
+			<a href="#" id="post_login_user">/users/login</a> - Login a user with specified username/password.
+		</div>
+
+		<div>
+			<a href="#" id="post_logout_user">/users/logout</a> - Logs current user out. Does nothing if not already logged in.
+		</div>
+
+		<div>
+			Pickmeup Text: <input id="post_text" type="text" /><br>
+			user_id: <input id="post_receiver_id" type="text" /><br><br>
+		</div>
+
+		<div>
+			<a href="#" id="post_create_pickmeup">/users/:user_id/pickmeups/</a> - Create a pickmeup to specified receiver as the logged in user. Fails if not logged in or user_id doesnt exist.
+		</div>
+
+
+		<h4>PUT requests</h4>
+
+		<div>
+			user_id: <input id="put_receiver_id" type="text" /><br>
+			pickmeup_id: <input id="put_pickmeup_id" type="text" /><br>
+			Voting Direction: <input id="put_voting_direction" type="text" />
+		</div>
+
+		<div>
+			<a href="#" id="put_unlock_pickmeup">/users/:user_id/pickmeups/:pickmeup_id/unlock</a> - Unlocks specified pickmeup. Fails if not logged in as given user or if no karma.
+		</div>
+
+		<div>
+			<a href="#" id="put_vote_on_pickmeup">/users/:user_id/pickmeups/:pickmeup_id/vote</a> - Votes on specified pickmeup. Fails if not logged in.
+		</div>
+
+	</div>
+  </body>
+</html>
